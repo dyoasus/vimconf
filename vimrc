@@ -63,4 +63,9 @@ inoremap <c-k> <up>
 inoremap <c-l> <right>
 inoremap <c-h> <left>
 
+"隐藏菜单栏与工具栏
+set guioptions-=m
+set guioptions-=T
 
+"Nodejs补全
+Bundle 'moll/vim-node'
