@@ -57,6 +57,10 @@ set number
 "无限undo
 set undofile
 
+"set guifont=Sauce\ Code\ Powerline\ Regular
+"set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium
+set guifont=文泉驿等宽微米黑\ 11
+
 "插入模式上下移动
 inoremap <c-j> <down>
 inoremap <c-k> <up>
