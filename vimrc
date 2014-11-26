@@ -73,3 +73,11 @@ set guioptions-=T
 
 "Nodejs补全
 Bundle 'moll/vim-node'
+"自动补全括号
+Bundle 'Raimondi/delimitMate'
+"批量注释工具 单行：gcc gcu 多行:visual gc
+Bundle 'tpope/vim-commentary' 
+"查看git详细提交日志
+Bundle 'gregsexton/gitv' 
+"js code beautify
+Bundle 'maksimr/vim-jsbeautify'
