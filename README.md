@@ -11,6 +11,17 @@
 >ruby extconf.rb  
 >make  
   
+##ctags
+>ctags --version  
+>cd ~/{yourProject}  
+>ctgs -R  
+
+>gvim
+>set tags=tags
+
+:tag {funName}  
+:tags  
+
 ###错误信息
 Gtk-WARNING **: Invalid input string  
 cd /usr/share/vim/vim72/lang  
