@@ -45,19 +45,32 @@ set laststatus=2
 set t_Co=256
 set encoding=utf8
 
-set tabstop=2  		" tab 键设定
+" tab 键设定
+set tabstop=2  		
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-set number		"显示行号
-set undofile	"无限undo
+"显示行号
+set number		
+"无限undo
+set undofile	
 set guifont=文泉驿等宽微米黑\ 11
 
-inoremap <c-j> <down>	"插入模式上下移动
-inoremap <c-k> <up>
-inoremap <c-l> <right>
-inoremap <c-h> <left>
+"插入模式上下移动
+inoremap <a-j> <down>
+inoremap <a-k> <up>
+inoremap <a-l> <right>
+inoremap <a-h> <left>
+"撤销
+inoremap <a-u> u
+"插入行
+inoremap <a-o> <Esc>o
+inoremap <a-O> <Esc>O
+"删除行
+inoremap <a-d> dd
+
+
 
 set guioptions-=m		"隐藏菜单栏与工具栏
 set guioptions-=T
