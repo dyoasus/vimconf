@@ -62,6 +62,7 @@ inoremap <a-j> <down>
 inoremap <a-k> <up>
 inoremap <a-l> <right>
 inoremap <a-h> <left>
+inoremap <A-;> <End>
 "撤销
 inoremap <a-u> u
 "插入行
@@ -71,8 +72,8 @@ inoremap <a-O> <Esc>O
 inoremap <a-d> dd
 
 
-
-set guioptions-=m		"隐藏菜单栏与工具栏
+"隐藏菜单栏与工具栏
+set guioptions-=m		
 set guioptions-=T
 
 " == 插件配置 ==
