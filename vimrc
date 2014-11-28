@@ -44,6 +44,7 @@ Bundle 'https://github.com/Shutnik/jshint2.vim.git'
 set laststatus=2
 set t_Co=256
 set encoding=utf8
+set nobackup
 
 " tab 键设定
 set tabstop=2  		
@@ -58,23 +59,36 @@ set undofile
 set guifont=文泉驿等宽微米黑\ 11
 
 "插入模式上下移动
-inoremap <a-j> <down>
-inoremap <a-k> <up>
-inoremap <a-l> <right>
-inoremap <a-h> <left>
-inoremap <A-;> <End>
+imap <c-j> <down>
+imap <c-k> <up>
+imap <c-l> <right>
+imap <c-h> <left>
+imap <A-;> <End>
 "撤销
-inoremap <a-u> u
+imap <c-u> <Esc>ui
 "插入行
-inoremap <a-o> <Esc>o
-inoremap <a-O> <Esc>O
-"删除行
-inoremap <a-d> dd
+imap <c-o> <Esc>o
+imap <c-O> <Esc>O
+"剪切行
+imap <c-d> <Esc>dd
+imap <c-p> <Esc>p
+" 合并行
+imap <c-i> <Esc>Ji
 
+" 禁用括号高亮，PS：在括号内输入文字时括号会闪
+let loaded_matchparen=1
 
 "隐藏菜单栏与工具栏
 set guioptions-=m		
 set guioptions-=T
+
+" 代码折叠基于缩进或语法TODO
+"set foldmethod=indent
+"set foldmethod=syntax
+"set nofoldenable
+
+" == 颜色配置 ==
+" ==============
 
 " == 插件配置 ==
 " ==============
@@ -93,8 +107,16 @@ map <F8> :NERDTree<cr>
 map <F9> :NERDTreeClose<cr>
 " 美化JS代码 全文件美化，v 区域美化
 "map <c-f> :call JsBeautify()<cr>		
-map <c-f> :call RangeJsBeautify()<cr>		
+map <c-f> :call RangeJsBeautify()<cr>
+imap <c-f> <ESC>:call RangeJsBeautify()<cr>
 " 代码检查
-map <c-j> :JSHint<cr>				
+map <c-s> :JSHint<cr>
+imap <c-s> <esc>:JSHint<cr>I
 " 查找文件
 map <c-p> :CommandT<cr>				
+
+" 代码补全
+imap <c-n> <c-n>
+
+" 用空格键来开关折叠
+map <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>

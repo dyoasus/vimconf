@@ -1,4 +1,4 @@
-#vimconf
+#插件
 
 ##Vundle
 >https://github.com/gmarik/Vundle.vim
@@ -21,6 +21,11 @@
 
 :tag {funName}  
 :tags  
+
+#配置
+>键盘映射 caps_Lock ->> control_R
+>sudo ln -s xmodmap ~/.xmodmap  
+>xmodmap ~/.xmodmap
 
 ###错误信息
 Gtk-WARNING **: Invalid input string  
