@@ -22,11 +22,6 @@
 :tag {funName}  
 :tags  
 
-#配置
->键盘映射 caps_Lock ->> control_R
->sudo ln -s xmodmap ~/.xmodmap  
->xmodmap ~/.xmodmap
-
 ###错误信息
 Gtk-WARNING **: Invalid input string  
 cd /usr/share/vim/vim72/lang  

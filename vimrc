@@ -59,22 +59,23 @@ set undofile
 set guifont=文泉驿等宽微米黑\ 11
 
 "插入模式上下移动
-imap <c-j> <down>
-imap <c-k> <up>
-imap <c-l> <right>
-imap <c-h> <left>
-imap <A-;> <End>
+imap <a-j> <down>
+imap <a-k> <up>
+imap <a-l> <right>
+imap <a-h> <left>
+imap <a-;> <end>
 "撤销
-imap <c-u> <Esc>ui
+imap <a-u> <Esc>ui
 "插入行
-imap <c-o> <Esc>o
-imap <c-O> <Esc>O
+imap <a-o> <Esc>o
+imap <a-O> <Esc>O
 "剪切行
-imap <c-d> <Esc>dd
-imap <c-p> <Esc>p
+imap <a-d> <Esc>dd
+"imap <a-p> <Esc>p
 " 合并行
-imap <c-i> <Esc>Ji
+imap <a-i> <Esc>Ji
 
+imap <Tab> <Tab>
 " 禁用括号高亮，PS：在括号内输入文字时括号会闪
 let loaded_matchparen=1
 
@@ -106,17 +107,17 @@ colorscheme monokai
 map <F8> :NERDTree<cr>  		
 map <F9> :NERDTreeClose<cr>
 " 美化JS代码 全文件美化，v 区域美化
-"map <c-f> :call JsBeautify()<cr>		
-map <c-f> :call RangeJsBeautify()<cr>
-imap <c-f> <ESC>:call RangeJsBeautify()<cr>
+"map <a-f> :call JsBeautify()<cr>		
+map <a-f> :call RangeJsBeautify()<cr>
+imap <a-f> <ESC>:call RangeJsBeautify()<cr>
 " 代码检查
-map <c-s> :JSHint<cr>
-imap <c-s> <esc>:JSHint<cr>I
+map <a-s> :JSHint<cr>
+imap <a-s> <esc>:JSHint<cr>I
 " 查找文件
-map <c-p> :CommandT<cr>				
+map <a-p> :CommandT<cr>				
 
 " 代码补全
-imap <c-n> <c-n>
+imap <a-n> <a-n>
 
 " 用空格键来开关折叠
 map <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
