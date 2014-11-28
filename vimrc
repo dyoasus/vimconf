@@ -114,10 +114,10 @@ imap <a-f> <ESC>:call RangeJsBeautify()<cr>
 map <a-s> :JSHint<cr>
 imap <a-s> <esc>:JSHint<cr>I
 " 查找文件
-map <a-p> :CommandT<cr>				
+map <c-p> :CommandT<cr>				
 
 " 代码补全
-imap <a-n> <a-n>
+imap <a-n> <c-n>
 
 " 用空格键来开关折叠
 map <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
