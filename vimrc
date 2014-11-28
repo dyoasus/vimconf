@@ -75,7 +75,6 @@ imap <a-d> <Esc>dd
 " 合并行
 imap <a-i> <Esc>Ji
 
-imap <Tab> <Tab>
 " 禁用括号高亮，PS：在括号内输入文字时括号会闪
 let loaded_matchparen=1
 
