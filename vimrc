@@ -103,8 +103,24 @@ colorscheme monokai
 " == 快捷键 ==
 " ============
 " 打开关闭NERDTree
+map <a-;> <END>
+
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-h> <c-w>h
+map <c-l> <c-w>l
+imap <c-j> <c-w>j
+imap <c-k> <c-w>k
+imap <c-h> <c-w>h
+imap <c-l> <c-w>l
+
+map <c-c> "+y
+map <c-v> "+p
+
+map <F8> :NERDTree<cr>  		
 map <F8> :NERDTree<cr>  		
 map <F9> :NERDTreeClose<cr>
+
 " 美化JS代码 全文件美化，v 区域美化
 "map <a-f> :call JsBeautify()<cr>		
 map <a-f> :call RangeJsBeautify()<cr>
