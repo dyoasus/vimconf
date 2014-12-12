@@ -55,7 +55,7 @@ set expandtab
 "显示行号
 set number		
 "无限undo
-set undofile	
+set noundofile	
 set guifont=文泉驿等宽微米黑\ 11
 
 "插入模式上下移动
