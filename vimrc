@@ -24,6 +24,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'The-NERD-tree'
 Bundle 'The-NERD-Commenter'
 Bundle 'lsdr/monokai'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 "Node支持
 Bundle 'moll/vim-node'	        
@@ -56,24 +57,24 @@ set expandtab
 set number		
 "无限undo
 set noundofile	
-set guifont=文泉驿等宽微米黑\ 11
+" set guifont=文泉驿等宽微米黑\ 11
 
 "插入模式上下移动
-imap <a-j> <down>
-imap <a-k> <up>
-imap <a-l> <right>
-imap <a-h> <left>
-imap <a-;> <end>
+" imap <a-j> <down>
+" imap <a-k> <up>
+" imap <a-l> <right>
+" imap <a-h> <left>
+" imap <a-;> <end>
 "撤销
-imap <a-u> <Esc>ui
+" imap <a-u> <Esc>ui
 "插入行
-imap <a-o> <Esc>o
-imap <a-O> <Esc>O
+" imap <a-o> <Esc>o
+" imap <a-O> <Esc>O
 "剪切行
-imap <a-d> <Esc>dd
+" imap <a-d> <Esc>dd
 "imap <a-p> <Esc>p
 " 合并行
-imap <a-i> <Esc>Ji
+" imap <a-i> <Esc>Ji
 
 " 禁用括号高亮，PS：在括号内输入文字时括号会闪
 let loaded_matchparen=1
@@ -96,14 +97,15 @@ let g:Powerline_symbols='unicode'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " 设置颜色主题
+let g:solarized_termcolors=256
 syntax enable
 set background=dark
-colorscheme monokai 	
+" colorscheme monokai 	
+colorscheme solarized
 
 " == 快捷键 ==
 " ============
-" 打开关闭NERDTree
-map <a-;> <END>
+" map <a-;> <END>
 
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -114,12 +116,13 @@ imap <c-k> <c-w>k
 imap <c-h> <c-w>h
 imap <c-l> <c-w>l
 
-map <c-c> "+y
-map <c-v> "+p
+" map <c-c> "+y
+" map <c-v> "+p
 
-map <F8> :NERDTree<cr>  		
+" 打开关闭NERDTree
 map <F8> :NERDTree<cr>  		
 map <F9> :NERDTreeClose<cr>
+map <F10> :TagbarToggle<cr>  		
 
 " 美化JS代码 全文件美化，v 区域美化
 "map <a-f> :call JsBeautify()<cr>		
