@@ -1,5 +1,6 @@
-set nocompatible              " be iMproved, required
-"filetype off                  " required
+set nocompatible
+filetype on
+filetype plugin on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -39,6 +40,8 @@ Bundle 'maksimr/vim-jsbeautify'
 Bundle 'editorconfig/editorconfig-vim'
 " js代码检查
 Bundle 'https://github.com/Shutnik/jshint2.vim.git'		
+"搜索 首先安装 ack
+Bundle 'dyng/ctrlsf.vim'
 
 " == 全局配置 ==
 " ==============
@@ -57,7 +60,9 @@ set expandtab
 set number		
 "无限undo
 set noundofile	
-" set guifont=文泉驿等宽微米黑\ 11
+" 高亮显示搜索结果
+set hlsearch
+" set guifont=Menlo\ Regular\ 12
 
 "插入模式上下移动
 " imap <a-j> <down>
@@ -85,8 +90,8 @@ set guioptions-=T
 
 " 代码折叠基于缩进或语法TODO
 "set foldmethod=indent
-"set foldmethod=syntax
-"set nofoldenable
+set foldmethod=syntax
+set nofoldenable
 
 " == 颜色配置 ==
 " ==============
@@ -99,6 +104,7 @@ filetype plugin indent on    " required
 " 设置颜色主题
 let g:solarized_termcolors=256
 syntax enable
+syntax on
 set background=dark
 " colorscheme monokai 	
 colorscheme solarized
