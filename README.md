@@ -1,30 +1,13 @@
-#插件
+## macvim
 
-##Vundle
+> brew install macvim --with-cscope --with-lua --HEAD " neocomplaete.vim 需要
+##插件
+###Vundle
 >https://github.com/gmarik/Vundle.vim
 
-##Command-T
->sudo yum install ruby  
->sudo yum install ruby-devel  
-
->cd .vim/bundle/command-t/ruby/command-t  
->ruby extconf.rb  
->make  
-  
-##ctags
->ctags --version  
->cd ~/{yourProject}  
->ctgs -R  
-
->gvim
->set tags=tags
-
-:tag {funName}  
-:tags  
-
-###错误信息
+##错误信息
+#### CentOS
 Gtk-WARNING **: Invalid input string  
 cd /usr/share/vim/vim72/lang  
 sudo ln -s menu_zh_cn.utf-8.vim menu_zh_cn.utf8.vim  
  
-
