@@ -38,10 +38,26 @@ Bundle 'gregsexton/gitv'
 "js code beautify 使用 ~/.editorconfig 作为配置
 Bundle 'maksimr/vim-jsbeautify'	
 Bundle 'editorconfig/editorconfig-vim'
-" js代码检查
-Bundle 'https://github.com/Shutnik/jshint2.vim.git'		
-"搜索 首先安装 ack
+" 代码检查
+Bundle 'https://github.com/scrooloose/syntastic.git'
+let g:syntastic_cpp_check_header = 1
+" g:syntastic_jshint_exe
+" Bundle 'https://github.com/Shutnik/jshint2.vim.git'		
+"搜索 首先安装 brew install the_silver_searcher 
 Bundle 'dyng/ctrlsf.vim'
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" "代码补全工具  
+" Bundle 'https://github.com/Shougo/neocomplete.vim.git'
+
+" 有道翻译
+Bundle 'https://github.com/ianva/vim-youdao-translater.git'
+vnoremap <silent> <C-T> <Esc>:Ydv<CR> 
+nnoremap <silent> <C-T> <Esc>:Ydc<CR> 
+noremap <leader>yd :Yde<CR>
+
+" 多选相同单词并修改
+Bundle 'https://github.com/terryma/vim-multiple-cursors.git'
+let g:multi_cursor_next_key='<C-n>'
 
 " == 全局配置 ==
 " ==============
@@ -49,6 +65,10 @@ set laststatus=2
 set t_Co=256
 set encoding=utf8
 set nobackup
+set backspace=2
+
+"去掉vi兼容模式
+set nocompatible
 
 " tab 键设定
 set tabstop=2  		
@@ -65,11 +85,18 @@ set hlsearch
 " set guifont=Menlo\ Regular\ 12
 
 "插入模式上下移动
-" imap <a-j> <down>
-" imap <a-k> <up>
-" imap <a-l> <right>
-" imap <a-h> <left>
-" imap <a-;> <end>
+imap <c-n> <down>
+imap <c-p> <up>
+imap <c-f> <right>
+imap <c-b> <left>
+imap <c-e> <end>
+imap <c-a> <home>
+imap <c-d> <delete>
+imap <c-h> <backspace>
+
+" 代码补全
+" imap <c-j> <c-n>
+
 "撤销
 " imap <a-u> <Esc>ui
 "插入行
@@ -109,39 +136,20 @@ set background=dark
 " colorscheme monokai 	
 colorscheme solarized
 
+" let g:ycm_auto_trigger = 1
+
 " == 快捷键 ==
-" ============
-" map <a-;> <END>
+" ==========="
 
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-h> <c-w>h
-map <c-l> <c-w>l
-imap <c-j> <c-w>j
-imap <c-k> <c-w>k
-imap <c-h> <c-w>h
-imap <c-l> <c-w>l
-
-" map <c-c> "+y
-" map <c-v> "+p
-
-" 打开关闭NERDTree
+"  打开关闭NERDTree
 map <F8> :NERDTree<cr>  		
 map <F9> :NERDTreeClose<cr>
-map <F10> :TagbarToggle<cr>  		
 
 " 美化JS代码 全文件美化，v 区域美化
 "map <a-f> :call JsBeautify()<cr>		
 map <a-f> :call RangeJsBeautify()<cr>
 imap <a-f> <ESC>:call RangeJsBeautify()<cr>
-" 代码检查
-map <a-s> :JSHint<cr>
-imap <a-s> <esc>:JSHint<cr>I
 " 查找文件
 map <c-p> :CommandT<cr>				
-
-" 代码补全
-imap <a-n> <c-n>
-
 " 用空格键来开关折叠
 map <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
