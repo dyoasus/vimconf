@@ -121,7 +121,7 @@ let g:multi_cursor_next_key='<C-n>'
 " == 全局配置 ==
 " ==============
 set laststatus=2
-set t_Co=256
+" set t_Co=256
 set encoding=utf8
 set nobackup
 set backspace=2
@@ -142,17 +142,6 @@ set noundofile
 " 高亮显示搜索结果
 set hlsearch
 " set guifont=Menlo\ Regular\ 12
-
-"插入模式上下移动
-imap <c-n> <down>
-imap <c-p> <up>
-imap <c-f> <right>
-imap <c-b> <left>
-imap <c-e> <end>
-imap <c-a> <home>
-imap <c-d> <delete>
-imap <c-h> <backspace>
-
 " 代码补全
 " imap <c-j> <c-n>
 
@@ -189,10 +178,13 @@ map <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
 let g:Powerline_symbols='unicode'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+
 " 设置颜色主题
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256 在iterm2下禁用此项
 syntax enable
-syntax on
+" syntax on
 set background=dark
 " colorscheme monokai 	
 colorscheme solarized
@@ -202,12 +194,29 @@ colorscheme solarized
 " == 快捷键 ==
 " ==========="
 
+"插入模式上下移动
+imap <c-n> <down>
+imap <c-p> <up>
+map <c-f> <right>
+imap <c-f> <right>
+imap <c-b> <left>
+map <c-e> <end>
+imap <c-e> <end>
+map <c-a> <home>
+imap <c-a> <home>
+imap <c-d> <delete>
+imap <c-h> <backspace>
+
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-h> <c-w>h
+map <c-l> <c-w>l
+
 "  打开关闭NERDTree
-map <F8> :NERDTree<cr>  		
-map <F9> :NERDTreeClose<cr>
+map <c-i> :silent! NERDTreeToggle<cr>
 
 " 美化JS代码 全文件美化，v 区域美化
 "map <a-f> :call JsBeautify()<cr>		
-map <a-f> :call RangeJsBeautify()<cr>
-imap <a-f> <ESC>:call RangeJsBeautify()<cr>
+" map <a-f> :call RangeJsBeautify()<cr>
+" imap <a-f> <ESC>:call RangeJsBeautify()<cr>
 
