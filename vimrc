@@ -67,8 +67,12 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 Bundle 'kien/ctrlp.vim'
+
 Bundle 'The-NERD-tree'
 Bundle 'The-NERD-Commenter'
+
+" only window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "主题颜色
 Bundle 'lsdr/monokai'
@@ -91,11 +95,10 @@ Bundle 'maksimr/vim-jsbeautify'
 
 " 查找github 及 vim online 上的插件
 Bundle 'editorconfig/editorconfig-vim'
-" 代码检查
+" 代码检查 需全局安装 jshint
 Bundle 'https://github.com/scrooloose/syntastic.git'
 let g:syntastic_cpp_check_header = 1
-" g:syntastic_jshint_exe
-" Bundle 'https://github.com/Shutnik/jshint2.vim.git'		
+
 "搜索 首先安装 brew install the_silver_searcher 
 Bundle 'dyng/ctrlsf.vim'
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -115,8 +118,8 @@ nnoremap <silent> <C-T> <Esc>:Ydc<CR>
 noremap <leader>yd :Yde<CR>
 
 " 多选相同单词并修改
-Bundle 'https://github.com/terryma/vim-multiple-cursors.git'
-let g:multi_cursor_next_key='<C-n>'
+" Bundle 'https://github.com/terryma/vim-multiple-cursors.git'
+" let g:multi_cursor_next_key='<C-n>'
 
 " == 全局配置 ==
 " ==============
@@ -128,7 +131,6 @@ set backspace=2
 
 "去掉vi兼容模式
 set nocompatible
-
 " tab 键设定
 set tabstop=2  		
 set shiftwidth=2
@@ -170,16 +172,11 @@ set nofoldenable
 " 用空格键来开关折叠
 map <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
 
-" == 颜色配置 ==
-" ==============
-
 " == 插件配置 ==
 " ==============
 let g:Powerline_symbols='unicode'
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-
 
 " 设置颜色主题
 " let g:solarized_termcolors=256 在iterm2下禁用此项
@@ -188,8 +185,6 @@ syntax enable
 set background=dark
 " colorscheme monokai 	
 colorscheme solarized
-
-" let g:ycm_auto_trigger = 1
 
 " == 快捷键 ==
 " ==========="
@@ -213,8 +208,8 @@ map <c-h> <c-w>h
 map <c-l> <c-w>l
 
 "  打开关闭NERDTree
-map <c-i> :silent! NERDTreeToggle<cr>
-
+map <c-i> :NERDTreeToggle<cr>
+map <D-p> <c-p>
 " 美化JS代码 全文件美化，v 区域美化
 "map <a-f> :call JsBeautify()<cr>		
 " map <a-f> :call RangeJsBeautify()<cr>
