@@ -87,6 +87,13 @@ Bundle 'Raimondi/delimitMate'
 "批量注释工具 单行：gcc gcu 多行:visual gc
 Bundle 'tpope/vim-commentary' 		
 
+" 文件头注释 :DoxAuthor ; 函数注释 :Dox
+Bundle 'https://github.com/mrtazz/DoxygenToolkit.vim.git'
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+let g:DoxygenToolkit_paramTag_pre="@Param "
+let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_authorName="cts"
+
 "查看git详细提交日志
 Bundle 'gregsexton/gitv' 		
 
@@ -201,15 +208,16 @@ map <c-a> <home>
 imap <c-a> <home>
 imap <c-d> <delete>
 imap <c-h> <backspace>
-
+" imap <c-k> 
+" imap <c-l> 
+map <Tab> i<Tab><esc>
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-h> <c-w>h
 map <c-l> <c-w>l
 
 "  打开关闭NERDTree
-map <c-i> :NERDTreeToggle<cr>
-map <D-p> <c-p>
+" map <c-i> :NERDTreeToggle<cr>
 " 美化JS代码 全文件美化，v 区域美化
 "map <a-f> :call JsBeautify()<cr>		
 " map <a-f> :call RangeJsBeautify()<cr>
