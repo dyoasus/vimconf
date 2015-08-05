@@ -1,5 +1,5 @@
 set nocompatible
-filetype on
+filetype off
 filetype plugin on
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -40,19 +40,12 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-" inoremap <expr><C-g>     neocomplete#undo_completion()
-" inoremap <expr><C-l>     neocomplete#complete_common_string()
-
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
     return neocomplete#close_popup() . "\<CR>"
 endfunction
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><C-y>  neocomplete#close_popup()
-" inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -81,6 +74,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 "Node支持
 Bundle 'moll/vim-node'	        
+
 "自动补全括号
 Bundle 'Raimondi/delimitMate'	
 
@@ -115,6 +109,10 @@ Bundle 'https://github.com/ianva/vim-youdao-translater.git'
 "Markdown 
 Bundle 'godlygeek/tabular'
 Bundle 'plasticboy/vim-markdown'
+
+" golang
+Plugin 'fatih/vim-go'
+
 " 禁用markdown折叠配置
 let g:vim_markdown_folding_disabled=1
 " 禁用markdown默认键设置
@@ -188,7 +186,7 @@ filetype plugin indent on    " required
 " 设置颜色主题
 " let g:solarized_termcolors=256 在iterm2下禁用此项
 syntax enable
-" syntax on
+syntax on
 set background=dark
 " colorscheme monokai 	
 colorscheme solarized
@@ -197,8 +195,10 @@ colorscheme solarized
 " ==========="
 
 "插入模式上下移动
-imap <c-n> <down>
-imap <c-p> <up>
+imap <c-j> <down>
+imap <c-k> <up>
+" imap <c-p> <up>
+" imap <c-p> <up>
 map <c-f> <right>
 imap <c-f> <right>
 imap <c-b> <left>
@@ -208,8 +208,7 @@ map <c-a> <home>
 imap <c-a> <home>
 imap <c-d> <delete>
 imap <c-h> <backspace>
-" imap <c-k> 
-" imap <c-l> 
+
 map <Tab> i<Tab><esc>
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -217,7 +216,8 @@ map <c-h> <c-w>h
 map <c-l> <c-w>l
 
 "  打开关闭NERDTree
-" map <c-i> :NERDTreeToggle<cr>
+" map <c-m> :NERDTreeToggle<cr>
+map <c-q> :NERDTree<cr>
 " 美化JS代码 全文件美化，v 区域美化
 "map <a-f> :call JsBeautify()<cr>		
 " map <a-f> :call RangeJsBeautify()<cr>
