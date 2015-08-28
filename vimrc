@@ -7,9 +7,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-
 Plugin 'L9'
 
 " Plugin 'git://git.wincent.com/command-t.git'
@@ -89,7 +86,7 @@ let g:DoxygenToolkit_returnTag="@Returns   "
 let g:DoxygenToolkit_authorName="cts"
 
 "查看git详细提交日志
-Bundle 'gregsexton/gitv' 		
+Bundle 'tpope/vim-fugitive'
 
 "js code beautify 使用 ~/.editorconfig 作为配置
 Bundle 'maksimr/vim-jsbeautify'	
@@ -175,7 +172,7 @@ set guioptions-=T
 set foldmethod=syntax
 set nofoldenable
 " 用空格键来开关折叠
-map <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
+" map <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
 
 " == 插件配置 ==
 " ==============
