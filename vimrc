@@ -2,6 +2,9 @@ set nocompatible
 filetype off
 filetype plugin on
 
+"+y 复制到剪切板
+set clipboard=unnamed
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -56,6 +59,9 @@ endif
 
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
+" 禁用Scratch窗口
+set completeopt=menu
+
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'The-NERD-tree'
@@ -100,6 +106,10 @@ let g:syntastic_cpp_check_header = 1
 "搜索 首先安装 brew install the_silver_searcher 
 Bundle 'dyng/ctrlsf.vim'
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" 光标移动神器
+Bundle 'easymotion/vim-easymotion'
+
 " 有道翻译
 Bundle 'https://github.com/ianva/vim-youdao-translater.git'
 
@@ -107,8 +117,40 @@ Bundle 'https://github.com/ianva/vim-youdao-translater.git'
 Bundle 'godlygeek/tabular'
 Bundle 'plasticboy/vim-markdown'
 
+"tagbar :TagbarToggle
+Bundle 'https://github.com/majutsushi/tagbar.git'
+
 " golang
 Plugin 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
+"gotags
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
 
 " 禁用markdown折叠配置
 let g:vim_markdown_folding_disabled=1
@@ -183,7 +225,7 @@ filetype plugin indent on    " required
 " 设置颜色主题
 " let g:solarized_termcolors=256 在iterm2下禁用此项
 syntax enable
-syntax on
+" syntax on
 set background=dark
 " colorscheme monokai 	
 colorscheme solarized
